@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @user do |f| %>
+      <p>Name: <%= @user.name %></p>
+      <%= f.hidden_field :name, class: 'form-control' %>
+
+      <p>Email: <%= @user.email %></p>
+      <%= f.hidden_field :email, class: 'form-control' %>
+      
+      <p>Birthday: <%= @user.birthday %></p>
+      <%= f.hidden_field :birthday, start_year: 1950, end_year: 2016 %>
+      
+      <p>Gender: <%= @user.gender %></p>
+      <%= f.hidden_field :gender, class: 'form-control' %>
+
+
+      <p>Location: <%= @user.location %></p>
+      <%= f.hidden_field :location, class: 'form-control' %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+      
+      <p><%= f.submit 'Back!', name: 'back', class: "btn btn-large btn-primary" %></p>
+
+      <%= f.submit 'Create!', class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

@@ -1,4 +1,13 @@
-<h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+  <p>
   <%= gravatar_for @user %>
-  <%= @user.name %>
-</h1>
+  </p>
+  <p><%= @user.name %></p>
+  <p><%= @user.email %></p>
+  <p><%= @user.birthday %></p>
+  <p><%= @user.gender %></p>
+  <p><%= @user.location %></p>
+  </div>
+</div>
