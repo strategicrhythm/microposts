@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :microposts
   enum gender: { unknown: 0, male: 1, female: 2, other: 9 }
   validates :location, presence: true, length: { maximum: 100 }
+  validates :birthday, presence: true
   has_secure_password
   has_many :following_relationships, class_name:  "Relationship",
                                      foreign_key: "follower_id",
