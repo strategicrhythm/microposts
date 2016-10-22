@@ -7,7 +7,7 @@
       <p>Name:<%= @user.name %></p>
       <p>Mail:<%= @user.email %></p>
       <p>Gender:<%= @user.gender %></p>
-      <p>Birthday:<%= @user.birthday %></p>
+      <p>Birthday:<%= @user.born %></p>
       <p>Location:<%= @user.location %></p>
     </section>
     <section class="stats">
@@ -22,7 +22,7 @@
       <ol class="microposts">
         <%= render @microposts %>
       </ol>
-      <%= paginate @microposts %>
+       <%= paginate @microposts %>
     <% end %>
   </div>
 </div>

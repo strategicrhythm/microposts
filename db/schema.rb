@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161014060130) do
+ActiveRecord::Schema.define(version: 20161021121152) do
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "micropost_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "bookmarks", ["micropost_id"], name: "index_bookmarks_on_micropost_id"
+  add_index "bookmarks", ["user_id"], name: "index_bookmarks_on_user_id"
 
   create_table "microposts", force: :cascade do |t|
     t.integer  "user_id"
@@ -43,6 +53,7 @@ ActiveRecord::Schema.define(version: 20161014060130) do
     t.integer  "gender"
     t.time     "birthday"
     t.string   "location"
+    t.datetime "born"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

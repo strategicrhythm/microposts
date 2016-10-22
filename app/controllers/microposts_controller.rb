@@ -21,7 +21,7 @@ class MicropostsController < ApplicationController
     end
     
     def index
-     @microposts = Micropost.order(created_at: :desc).page params[:page]
+      @microposts = Micropost.order(created_at: :desc).page params[:page]
     end
     
     private
